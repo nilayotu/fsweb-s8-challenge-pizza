@@ -1,0 +1,58 @@
+.card {
+    width: 80%;
+    max-width: 300px;
+    background-color: white;
+    border-radius: 12px;
+    text-align: center;
+    padding: 16px;
+    padding-left: 30px;
+    font-family: "roboto condensed";
+  }
+  
+  .card img {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    justify-content: center;
+  }
+  
+  .card h3 {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: #292929;
+    text-align: left;
+  }
+  .card-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 12px;
+    margin-top: 8px;
+  }
+  
+  .card-info h6 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #292929;
+  }
+  .rate,
+  .comment {
+    font-weight: lighter;
+    text-align: right;
+  }
+  @media (max-width: 768px) {
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 5%;
+    }
+    .card {
+      width: 100%;
+      padding-left: 16px;
+      font-family: "roboto condensed";
+    }
+    .card h3 {
+      font-size: larger;
+      font-weight: 500;
+    }
+  }

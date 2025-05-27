@@ -1,0 +1,33 @@
+.alt-basliklar {
+    text-align: center;
+    width: 100%;
+    display: flex;          
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 0;
+    padding-top: 0; 
+  }
+  .alt-1 {
+    font-family: satisfy;
+    color: #CE2829;
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-bottom: 0px;
+  }
+  .alt-2 {
+    color:#292929;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 5px;
+    font-family: barlow;
+    font-size: 2rem;
+  }
+  @media (max-width: 768px) {
+    .alt-basliklar {
+      .alt-2 {
+        font-size: 2.8rem;
+      }
+    }
+  }
