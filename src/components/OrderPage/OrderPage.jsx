@@ -1,6 +1,8 @@
+import "./OrderPage.css";
 import { useState } from "react";
+import { withRouter } from "react-router-dom";
 
-function OrderPage() {
+function OrderPage(props) {
 
     const basePrice = 85.50;
     const extraPrice = 5.00;
@@ -31,9 +33,27 @@ function OrderPage() {
   const totalPrice = (basePrice + extraCost) * quantity ;
   const isIngredientCountValid = selectedIngredients.length >= 4;
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isIngredientCountValid) return;
+
+    const orderData = {
+      size: document.querySelector('input[name="size"]:checked')?.nextSibling?.textContent?.trim() || "Seçilmedi",
+      dough: document.querySelector('select')?.value || "Seçilmedi",
+      ingredients: selectedIngredients,
+      quantity,
+      note: e.target.querySelector('input[type="text"]').value,
+      totalPrice: Math.round(totalPrice * 100) / 100
+    };
+
+    props.history.push("/ozet", orderData);
+    };
+
     return (
+      <div>
+      <header className="order-header"><img src="images/iteration-1-images/logo.svg"/></header>
         <div className="order-container">
-         <header className="order-header"><img src="images/iteration-1-images/logo.svg"/></header>
+          <img className="form-banner" src="./images/iteration-2-images/pictures/form-banner.png" />
          <div className="order-content">
         <p className="breadcrumb">Anasayfa - <span className="red">Sipariş Oluştur</span></p>
 
@@ -52,7 +72,7 @@ function OrderPage() {
           İtalyan kökenli lezzetli bir yemektir.. Küçük bir pizzaya bazen pizzetta denir.
         </p>
 
-        <form className="order-form">
+        <form className="order-form" onSubmit={handleSubmit}>
           <div className="form-section">
             <label className="label">Boyut Seç</label>
             <div className="options">
@@ -118,7 +138,8 @@ function OrderPage() {
         </form>
       </div>
      </div>
+     </div>
     );
   }
   
-  export default OrderPage;
+export default withRouter(OrderPage);

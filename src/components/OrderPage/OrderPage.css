@@ -1,0 +1,176 @@
+.order-container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #FAF7F2;
+  padding-bottom: 50px;
+}
+.order-header {
+  background-color: #CE2829;
+  padding: 20px;
+  text-align: center;
+}
+.order-header img {
+  height: 40px;
+}
+.form-banner {
+    display: block;
+    align-items: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vw;
+    height: 25vh;
+}
+.order-content {
+  padding: 20px;
+}
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.red {
+  color: #CE2829;
+}
+
+.pizza-title {
+  font-size: 28px;
+  margin: 10px 0;
+  font-family: "Roboto Condensed";
+  color: #292929;
+}
+
+.price-review {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+.rating {
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #5F5F5F;
+}
+
+.review-count {
+  font-size: 14px;
+  color: #5F5F5F;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-family: Barlow;
+}
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+    display: flex;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: red;
+}
+
+.options label {
+  margin-right: 10px;
+}
+
+select {
+  padding: 8px;
+  font-size: 14px;
+  width: 45%;
+}
+
+.subtext {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.ingredient-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.ingredient-list input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-box button {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f4a261;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.summary {
+  font-size: 16px;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.submit-btn:not(:disabled):hover {
+  background-color: #21867a;
+}
