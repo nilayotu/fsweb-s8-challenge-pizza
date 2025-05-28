@@ -6,8 +6,10 @@ import Text from './components/Text/Text';
 import Button from "./components/Button/Button";
 import Card from "./components/Card/Card";
 import Footer from "./components/Footer/Footer";
+import OrderPage from './components/OrderPage/OrderPage';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-function App() {
+function HomePage() {
   return (
     <>
       <Header />
@@ -18,7 +20,18 @@ function App() {
       <Card />
       <Footer />
     </>
-  )
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/siparis" component={OrderPage} />
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;
