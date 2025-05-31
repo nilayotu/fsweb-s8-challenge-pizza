@@ -5,8 +5,9 @@ import Footer from "../Footer/Footer";
 
 function OrderPage(props) {
 
-   const [name, setName] = useState("");
   const [error, setError] = useState("");
+  const [name, setName] = useState("");
+  const [note, setNote] = useState("");
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -53,18 +54,18 @@ function OrderPage(props) {
     if (!isIngredientCountValid) return;
 
     const orderData = {
+      name,
+      note,
       size: document.querySelector('input[name="size"]:checked')?.nextSibling?.textContent?.trim() || "Seçilmedi",
       dough: document.querySelector('select')?.value || "Seçilmedi",
       ingredients: selectedIngredients,
       quantity,
-      note: e.target.querySelector('input[type="text"]').value,
+      extraCost: Math.round(extraCost * 100) / 100,
       totalPrice: Math.round(totalPrice * 100) / 100
     };
 
     props.history.push("/ozet", orderData);
     };
-
-    
 
     return (
       <div style={{ backgroundColor: "white" }}>
@@ -167,7 +168,11 @@ function OrderPage(props) {
             <label htmlFor="note" className="label">Sipariş Notu</label>
             <input 
             id="note"
-            type="text" placeholder="Siparişine eklemek istediğin bir not var mı?" />
+            type="text"
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+            placeholder="Siparişine eklemek istediğin bir not var mı?" 
+          />
           </div>
           </div>
           <div className="form-bottom">
