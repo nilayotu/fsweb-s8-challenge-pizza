@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import Footer from "../Footer/Footer";
+import "./OrderSummary.css";
 
 function OrderSummary(props) {
     const [order, setOrder] = useState(null);
@@ -21,6 +23,8 @@ function OrderSummary(props) {
   if (!order) return <p>Yükleniyor...</p>;
 
   return (
+    <div>
+        <header className="order-header"><img src="images/iteration-1-images/logo.svg"/></header>
     <div className="summary-container">
       <h2>Sipariş Özeti</h2>
       <p><strong>Pizza:</strong> Position Absolute Acı Pizza</p>
@@ -30,6 +34,8 @@ function OrderSummary(props) {
       <p><strong>Adet:</strong> {order.quantity}</p>
       <p><strong>Not:</strong> {order.note || "Yok"}</p>
       <p><strong>Toplam Tutar:</strong> {order.totalPrice}₺</p>
+    </div>
+    <Footer />
     </div>
   );
 }

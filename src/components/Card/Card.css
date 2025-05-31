@@ -1,3 +1,6 @@
+.card-container {
+  justify-content: center;
+}
 .card {
     width: 80%;
     max-width: 300px;
@@ -5,8 +8,9 @@
     border-radius: 12px;
     text-align: center;
     padding: 16px;
-    padding-left: 30px;
+    padding-left: 20px;
     font-family: "roboto condensed";
+    justify-content: center;
   }
   
   .card img {
